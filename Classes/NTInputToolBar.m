@@ -161,7 +161,7 @@ const CGFloat defaultKeyboardHeight = 216.f;
 - (void)setHiddenAfterUserd:(BOOL)hiddenAfterUserd{
 
     _hiddenAfterUserd = hiddenAfterUserd;
-    self.hidden = YES;
+    self.hidden = hiddenAfterUserd;
     
 }
 
