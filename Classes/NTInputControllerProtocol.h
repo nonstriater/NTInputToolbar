@@ -12,7 +12,7 @@
 @protocol NTInputControllerDelegate <NSObject>
 @required
 - (UIView *)contentView;
-- (UIView *)inputBarView;
+//- (UIView *)inputBarView;
 
 @end
 

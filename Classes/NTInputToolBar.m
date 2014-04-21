@@ -80,9 +80,9 @@ const CGFloat defaultKeyboardHeight = 216.f;
     }
         
     contentView = [controller contentView];
-    inputBarView = [controller inputBarView];
+    //inputBarView = [controller inputBarView];
     
-    self = [self initWithFrame:CGRectMake(0, inputBarView.frame.origin.y , inputBarView.frame.size.width, inputBarView.frame.size.height+defaultKeyboardHeight)];
+    self = [self initWithFrame:CGRectMake(0, CGRectGetHeight(viewController.view.frame)-inputToolBarHeight , contentView.frame.size.width, inputToolBarHeight+defaultKeyboardHeight)];
     if (self) {
         
         [viewController.view addSubview:self];
@@ -145,7 +145,7 @@ const CGFloat defaultKeyboardHeight = 216.f;
         [self addSubview:facialButton];
         
         
-        facialView = [[NTFacialView alloc] initWithFrame:CGRectMake(0.f, inputBarView.frame.size.height, inputBarView.frame.size.width, defaultKeyboardHeight)];
+        facialView = [[NTFacialView alloc] initWithFrame:CGRectMake(0.f, inputToolBarHeight, contentView.frame.size.width, defaultKeyboardHeight)];
         //facialView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
         
         facialView.delegate = self;
@@ -258,13 +258,13 @@ const CGFloat defaultKeyboardHeight = 216.f;
         contentView.center = CGPointMake(contentView.center.x, contentView.center.y+keyboardHeight);
         self.center = CGPointMake(self.center.x, self.center.y+keyboardHeight);
         if (self.hiddenAfterUserd) {
-            self.center = CGPointMake(self.center.x, self.center.y+CGRectGetHeight(inputBarView.frame));
+            self.center = CGPointMake(self.center.x, self.center.y+inputToolBarHeight);
         }
         
     } completion:^(BOOL finish){
         keyboardHasShow = NO;
         if (self.hiddenAfterUserd) {
-            self.frame = CGRectMake(0, inputBarView.frame.origin.y , inputBarView.frame.size.width, inputBarView.frame.size.height+defaultKeyboardHeight);
+            self.frame = CGRectMake(0, CGRectGetHeight(viewController.view.frame)-inputToolBarHeight , contentView.frame.size.width, inputToolBarHeight+defaultKeyboardHeight);
             self.hidden = YES;
         }
     }];

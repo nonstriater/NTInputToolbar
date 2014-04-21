@@ -16,7 +16,6 @@
 
     UIViewController    *viewController;
     UIView              *contentView;
-    UIView              *inputBarView;
     //BOOL                attachToScrollView;
     
     UIImageView         *toolbarBackground;
