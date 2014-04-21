@@ -18,4 +18,6 @@
 @interface Emoji : NSObject
 + (NSString *)emojiWithCode:(int)code;
 + (NSArray *)allEmoji;
++ (NSArray *)emojiEmotions;
+
 @end

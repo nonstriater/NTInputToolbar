@@ -11,7 +11,7 @@
 
 @interface ViewController (){
 
-    UIExpandingTextView *_textView;
+   // UIExpandingTextView *_textView;
 }
 
 @end
@@ -29,20 +29,12 @@
     textViewBackgroundImageView.frame          = CGRectMake(0, 100, 320, 100);
     [self.view addSubview:textViewBackgroundImageView];
     
-        //_textView.backgroundColor
-    [contentView addSubview:_textView];
+    //_textView.backgroundColor
+    //[contentView addSubview:_textView];
     
 }
 
 
-- (void)growingTextView:(HPGrowingTextView *)growingTextView willChangeHeight:(float)height{
-    
-    CGRect r=  growingTextView.frame;
-    r.size.height = height;
-    r.origin.y-=(height-r.size.height);
-    growingTextView.frame = r;
-
-}
 
 - (UIView *)contentView{
 

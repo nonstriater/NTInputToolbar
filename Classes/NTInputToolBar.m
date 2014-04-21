@@ -34,6 +34,7 @@ const CGFloat defaultKeyboardHeight = 216.f;
         
         self.voiceButtonHidden = YES;
         self.facialButtonHidden = NO;
+        self.hiddenAfterUserd = NO;
         
         keyboardHeight    = defaultKeyboardHeight;
         keyboardHasShow = NO;//代表整个键盘
@@ -50,11 +51,34 @@ const CGFloat defaultKeyboardHeight = 216.f;
     return self;
 }
 
+
+//- (id)initWithScrollViewController:(UIViewController *)controller{
+//
+//    if([controller.view isKindOfClass:[UIScrollView class]]){
+//        viewController = controller;
+//        UIScrollView *scrollView = (UIScrollView *)viewController.view;
+//        scrollView.contentInset = UIEdgeInsetsMake(0, 0, inputToolBarHeight, 0.f);
+//        
+//        attachToScrollView = YES;
+//    }
+//    
+//     self = [self initWithFrame:CGRectMake(0, ScreenHeight-inputToolBarHeight, viewController.view.frame.size.width, inputToolBarHeight+defaultKeyboardHeight)];
+//    
+//    if (self) {
+//        
+//        [viewController.view addSubview:self];
+//        [self initializeView];
+//    }
+//    return self;
+//
+//}
+
 - (id)initWithViewController:(id<NTInputControllerDelegate>)controller{
 
     if ([controller isKindOfClass:[UIViewController class]]) {
         viewController = (UIViewController *)controller;
     }
+        
     contentView = [controller contentView];
     inputBarView = [controller inputBarView];
     
@@ -120,8 +144,10 @@ const CGFloat defaultKeyboardHeight = 216.f;
         [facialButton addTarget:self action:@selector(facialButtonClicked:)  forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:facialButton];
         
+        
         facialView = [[NTFacialView alloc] initWithFrame:CGRectMake(0.f, inputBarView.frame.size.height, inputBarView.frame.size.width, defaultKeyboardHeight)];
         //facialView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+        
         facialView.delegate = self;
         [self addSubview:facialView];
         
@@ -130,15 +156,25 @@ const CGFloat defaultKeyboardHeight = 216.f;
         //facialView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
         [self insertSubview:facialBackgroundView belowSubview:facialView];
     }
-
-
 }
 
+- (void)setHiddenAfterUserd:(BOOL)hiddenAfterUserd{
+
+    _hiddenAfterUserd = hiddenAfterUserd;
+    self.hidden = YES;
+    
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    
+}
+
+- (void)becomeFirstResponder{
+
+    [_textView becomeFirstResponder];
     
 }
 
@@ -209,6 +245,7 @@ const CGFloat defaultKeyboardHeight = 216.f;
 - (void)hiddenKeyboard{
     
     if (tapGesture) {
+
         [contentView removeGestureRecognizer:tapGesture];
         tapGesture=nil;
     }
@@ -218,13 +255,18 @@ const CGFloat defaultKeyboardHeight = 216.f;
     [_textView resignFirstResponder];// 有willchangeframe完成后续工作
   
     [UIView animateWithDuration:animationDuration delay:0.f options:    curveOption animations:^{
-            //viewController.view.center = CGPointMake(viewController.view.center.x, viewController.view.center.y+keyboardHeight);
         contentView.center = CGPointMake(contentView.center.x, contentView.center.y+keyboardHeight);
         self.center = CGPointMake(self.center.x, self.center.y+keyboardHeight);
-        
+        if (self.hiddenAfterUserd) {
+            self.center = CGPointMake(self.center.x, self.center.y+CGRectGetHeight(inputBarView.frame));
+        }
         
     } completion:^(BOOL finish){
         keyboardHasShow = NO;
+        if (self.hiddenAfterUserd) {
+            self.frame = CGRectMake(0, inputBarView.frame.origin.y , inputBarView.frame.size.width, inputBarView.frame.size.height+defaultKeyboardHeight);
+            self.hidden = YES;
+        }
     }];
     
 
@@ -235,16 +277,15 @@ const CGFloat defaultKeyboardHeight = 216.f;
     if (!tapGesture) {
         tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
         [contentView addGestureRecognizer:tapGesture];
+
     }
 
     
     [UIView animateWithDuration:animationDuration delay:0.f options:curveOption animations:^{
         
-//        viewController.view.center = CGPointMake(viewController.view.center.x, viewController.view.center.y-keyboardHeight);
-
         contentView.center = CGPointMake(contentView.center.x, contentView.center.y-keyboardHeight);
         self.center = CGPointMake(self.center.x, self.center.y-keyboardHeight);
-        
+
     } completion:^(BOOL finish){
         keyboardHasShow = finish;
     }];
@@ -258,14 +299,15 @@ const CGFloat defaultKeyboardHeight = 216.f;
     if (!tapGesture) {
         tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
         [contentView addGestureRecognizer:tapGesture];
+        
     }
     
 
     [UIView animateWithDuration:animationDuration delay:0.f options:option animations:^{
-        //viewController.view.center = CGPointMake(viewController.view.center.x, viewController.view.center.y-keyboardHeightOffset);
+        
         contentView.center = CGPointMake(contentView.center.x, contentView.center.y-keyboardHeightOffset);
         self.center = CGPointMake(self.center.x, self.center.y-keyboardHeightOffset);
-        
+
     } completion:^(BOOL finish){
         keyboardHasShow = finish;
     }];
@@ -276,6 +318,11 @@ const CGFloat defaultKeyboardHeight = 216.f;
 
 // keyboard 中文汉字选择界面，手写输入界面等（键盘高度会有变化） 也会触发 UIKeyboardWillShowNotification(不过先触发willchangeframe)
 - (void)keyboardWillShow:(NSNotification *)notification{
+    
+    if (self.hiddenAfterUserd) {
+        self.hidden = NO;
+       // self.frame = CGRectMake(0, inputBarView.frame.origin.y , inputBarView.frame.size.width, inputBarView.frame.size.height+defaultKeyboardHeight);
+    }
     
     facialButton.hidden = NO;
     keyboardButton.hidden = YES;
@@ -311,11 +358,10 @@ const CGFloat defaultKeyboardHeight = 216.f;
     }else{// 3. 键盘已经弹出，键盘高度调整
 
         keyboardHeight+=offset;
-        //viewController.view.center = CGPointMake(viewController.view.center.x, viewController.view.center.y-offset);
-        
+
         contentView.center = CGPointMake(contentView.center.x, contentView.center.y-offset);
         self.center = CGPointMake(self.center.x, self.center.y-offset);
-        
+
     }
     
 }
@@ -360,34 +406,36 @@ const CGFloat defaultKeyboardHeight = 216.f;
 
 #pragma mark - UIExpandingTextView delegate
 
-- (BOOL)growingTextViewShouldBeginEditing:(HPGrowingTextView *)growingTextView{
+- (BOOL)growingTextViewShouldBeginEditing:(NTGrowingTextView *)growingTextView{
     return YES;
 }
 
-- (BOOL)growingTextViewShouldEndEditing:(HPGrowingTextView *)growingTextView{
+- (BOOL)growingTextViewShouldEndEditing:(NTGrowingTextView *)growingTextView{
     return YES;
 }
 
-- (void)growingTextViewDidBeginEditing:(HPGrowingTextView *)growingTextView{
+- (void)growingTextViewDidBeginEditing:(NTGrowingTextView *)growingTextView{
 
 }
-- (void)growingTextViewDidEndEditing:(HPGrowingTextView *)growingTextView{
+- (void)growingTextViewDidEndEditing:(NTGrowingTextView *)growingTextView{
 
 }
 
-- (BOOL)growingTextView:(HPGrowingTextView *)growingTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+- (BOOL)growingTextView:(NTGrowingTextView *)growingTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
 
     return YES;
 }
-- (void)growingTextViewDidChange:(HPGrowingTextView *)growingTextView{
+- (void)growingTextViewDidChange:(NTGrowingTextView *)growingTextView{
 
 }
 
-- (void)growingTextView:(HPGrowingTextView *)growingTextView willChangeHeight:(float)height{
+- (void)growingTextView:(NTGrowingTextView *)growingTextView willChangeHeight:(float)height{
     
     float diff = growingTextView.frame.size.height - height;
     NSLog(@"height = %f,diff=%f",height,diff);
     
+    CGRect contentRect = contentView.frame;
+    contentView.frame = CGRectMake(contentRect.origin.x,contentRect.origin.y , contentRect.size.width, contentRect.size.height+diff);
     
     CGRect r = self.frame;
     r.origin.y += diff;
@@ -401,14 +449,14 @@ const CGFloat defaultKeyboardHeight = 216.f;
     facialBackgroundView.center = CGPointMake(facialBackgroundView.center.x, facialBackgroundView.center.y-diff);
     
 }
-- (void)growingTextView:(HPGrowingTextView *)growingTextView didChangeHeight:(float)height{
+- (void)growingTextView:(NTGrowingTextView *)growingTextView didChangeHeight:(float)height{
 
 }
 
-- (void)growingTextViewDidChangeSelection:(HPGrowingTextView *)growingTextView{
+- (void)growingTextViewDidChangeSelection:(NTGrowingTextView *)growingTextView{
 
 }
-- (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView{
+- (BOOL)growingTextViewShouldReturn:(NTGrowingTextView *)growingTextView{
 
     if (_inputDelegate && [_inputDelegate respondsToSelector:@selector(inputToolBar:sendMessageWithText:)]) {
             [_inputDelegate inputToolBar:self sendMessageWithText:growingTextView.text];

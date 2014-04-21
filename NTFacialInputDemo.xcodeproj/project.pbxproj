@@ -48,23 +48,20 @@
 		044856D818F8FEA600CC7830 /* EmojiMapSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 044856C618F8FD7800CC7830 /* EmojiMapSymbols.m */; };
 		044856D918F8FEA600CC7830 /* EmojiPictographs.m in Sources */ = {isa = PBXBuildFile; fileRef = 044856C818F8FD7800CC7830 /* EmojiPictographs.m */; };
 		044856DA18F8FEA600CC7830 /* EmojiTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 044856CA18F8FD7800CC7830 /* EmojiTransport.m */; };
-		044856DC18F900C100CC7830 /* default_delete_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044856DB18F900C100CC7830 /* default_delete_icon@2x.png */; };
-		044856DD18F9012D00CC7830 /* default_delete_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044856DB18F900C100CC7830 /* default_delete_icon@2x.png */; };
 		044A749E18FAFEF000113A2C /* NTInputControllerProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 044A749D18FAF87D00113A2C /* NTInputControllerProtocol.h */; };
 		0457999618F9085100C62A98 /* NTInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457998F18F9085100C62A98 /* NTInputToolBar.m */; };
 		0457999718F9085100C62A98 /* NTInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457998F18F9085100C62A98 /* NTInputToolBar.m */; };
-		0457999818F9085100C62A98 /* UIExpandingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457999118F9085100C62A98 /* UIExpandingTextView.m */; };
-		0457999918F9085100C62A98 /* UIExpandingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457999118F9085100C62A98 /* UIExpandingTextView.m */; };
-		0457999A18F9085100C62A98 /* UIExpandingTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457999318F9085100C62A98 /* UIExpandingTextViewInternal.m */; };
-		0457999B18F9085100C62A98 /* UIExpandingTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457999318F9085100C62A98 /* UIExpandingTextViewInternal.m */; };
-		0457999F18F95EAB00C62A98 /* default_facial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0457999C18F95EAB00C62A98 /* default_facial@2x.png */; };
-		045799A018F95EAB00C62A98 /* default_facial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0457999C18F95EAB00C62A98 /* default_facial@2x.png */; };
-		045799A318F95EAB00C62A98 /* default_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0457999E18F95EAB00C62A98 /* default_keyboard@2x.png */; };
-		045799A418F95EAB00C62A98 /* default_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0457999E18F95EAB00C62A98 /* default_keyboard@2x.png */; };
-		048B4CF718FBB8A5008F4DCC /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048B4CF418FBB8A5008F4DCC /* HPGrowingTextView.m */; };
-		048B4CF818FBB8A5008F4DCC /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 048B4CF618FBB8A5008F4DCC /* HPTextViewInternal.m */; };
-		048B4CFA18FBDCA2008F4DCC /* default_inputBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048B4CF918FBDCA2008F4DCC /* default_inputBack@2x.png */; };
 		04A2E78D18F9AFC400B17843 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04A2E78C18F9AFC400B17843 /* README.md */; };
+		04AC772B19051EC000EE0766 /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC772A19051EC000EE0766 /* ViewControllerB.m */; };
+		04D9C24718FD7502007974AD /* default_delete_icon_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D9C24018FD7502007974AD /* default_delete_icon_h@2x.png */; };
+		04D9C24818FD7502007974AD /* default_delete_icon_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D9C24118FD7502007974AD /* default_delete_icon_n@2x.png */; };
+		04D9C24918FD7502007974AD /* default_facial_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D9C24218FD7502007974AD /* default_facial_h@2x.png */; };
+		04D9C24A18FD7502007974AD /* default_facial_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D9C24318FD7502007974AD /* default_facial_n@2x.png */; };
+		04D9C24B18FD7502007974AD /* default_input_bkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D9C24418FD7502007974AD /* default_input_bkg@2x.png */; };
+		04D9C24C18FD7502007974AD /* default_keyboard_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D9C24518FD7502007974AD /* default_keyboard_h@2x.png */; };
+		04D9C24D18FD7502007974AD /* default_keyboard_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D9C24618FD7502007974AD /* default_keyboard_n@2x.png */; };
+		04D9C25018FD7B4D007974AD /* NTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D9C24F18FD7B4D007974AD /* NTTableViewController.m */; };
+		04D9C26B18FD9AF2007974AD /* FSCommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D9C26A18FD9AF2007974AD /* FSCommentListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,22 +130,23 @@
 		044856CA18F8FD7800CC7830 /* EmojiTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiTransport.m; sourceTree = "<group>"; };
 		044856D018F8FD8C00CC7830 /* NTFacialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTFacialView.h; sourceTree = "<group>"; };
 		044856D118F8FD8C00CC7830 /* NTFacialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTFacialView.m; sourceTree = "<group>"; };
-		044856DB18F900C100CC7830 /* default_delete_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_delete_icon@2x.png"; sourceTree = "<group>"; };
 		044A749D18FAF87D00113A2C /* NTInputControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTInputControllerProtocol.h; sourceTree = "<group>"; };
 		0457998E18F9085100C62A98 /* NTInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTInputToolBar.h; sourceTree = "<group>"; };
 		0457998F18F9085100C62A98 /* NTInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTInputToolBar.m; sourceTree = "<group>"; };
-		0457999018F9085100C62A98 /* UIExpandingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIExpandingTextView.h; sourceTree = "<group>"; };
-		0457999118F9085100C62A98 /* UIExpandingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIExpandingTextView.m; sourceTree = "<group>"; };
-		0457999218F9085100C62A98 /* UIExpandingTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIExpandingTextViewInternal.h; sourceTree = "<group>"; };
-		0457999318F9085100C62A98 /* UIExpandingTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIExpandingTextViewInternal.m; sourceTree = "<group>"; };
-		0457999C18F95EAB00C62A98 /* default_facial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_facial@2x.png"; sourceTree = "<group>"; };
-		0457999E18F95EAB00C62A98 /* default_keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_keyboard@2x.png"; sourceTree = "<group>"; };
-		048B4CF318FBB8A5008F4DCC /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
-		048B4CF418FBB8A5008F4DCC /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
-		048B4CF518FBB8A5008F4DCC /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
-		048B4CF618FBB8A5008F4DCC /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
-		048B4CF918FBDCA2008F4DCC /* default_inputBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_inputBack@2x.png"; sourceTree = "<group>"; };
 		04A2E78C18F9AFC400B17843 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		04AC772919051EC000EE0766 /* ViewControllerB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerB.h; sourceTree = "<group>"; };
+		04AC772A19051EC000EE0766 /* ViewControllerB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
+		04D9C24018FD7502007974AD /* default_delete_icon_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_delete_icon_h@2x.png"; sourceTree = "<group>"; };
+		04D9C24118FD7502007974AD /* default_delete_icon_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_delete_icon_n@2x.png"; sourceTree = "<group>"; };
+		04D9C24218FD7502007974AD /* default_facial_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_facial_h@2x.png"; sourceTree = "<group>"; };
+		04D9C24318FD7502007974AD /* default_facial_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_facial_n@2x.png"; sourceTree = "<group>"; };
+		04D9C24418FD7502007974AD /* default_input_bkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_input_bkg@2x.png"; sourceTree = "<group>"; };
+		04D9C24518FD7502007974AD /* default_keyboard_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_keyboard_h@2x.png"; sourceTree = "<group>"; };
+		04D9C24618FD7502007974AD /* default_keyboard_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_keyboard_n@2x.png"; sourceTree = "<group>"; };
+		04D9C24E18FD7B4C007974AD /* NTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTableViewController.h; sourceTree = "<group>"; };
+		04D9C24F18FD7B4D007974AD /* NTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTableViewController.m; sourceTree = "<group>"; };
+		04D9C26918FD9AF2007974AD /* FSCommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommentListViewController.h; sourceTree = "<group>"; };
+		04D9C26A18FD9AF2007974AD /* FSCommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCommentListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +237,12 @@
 				0448566818F8FCEF00CC7830 /* Main.storyboard */,
 				0448566B18F8FCEF00CC7830 /* ViewController.h */,
 				0448566C18F8FCEF00CC7830 /* ViewController.m */,
+				04AC772919051EC000EE0766 /* ViewControllerB.h */,
+				04AC772A19051EC000EE0766 /* ViewControllerB.m */,
+				04D9C24E18FD7B4C007974AD /* NTTableViewController.h */,
+				04D9C24F18FD7B4D007974AD /* NTTableViewController.m */,
+				04D9C26918FD9AF2007974AD /* FSCommentListViewController.h */,
+				04D9C26A18FD9AF2007974AD /* FSCommentListViewController.m */,
 				0448566E18F8FCEF00CC7830 /* Images.xcassets */,
 				0448565D18F8FCEF00CC7830 /* Supporting Files */,
 			);
@@ -320,10 +324,13 @@
 		044856BF18F8FD5A00CC7830 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0457999C18F95EAB00C62A98 /* default_facial@2x.png */,
-				0457999E18F95EAB00C62A98 /* default_keyboard@2x.png */,
-				044856DB18F900C100CC7830 /* default_delete_icon@2x.png */,
-				048B4CF918FBDCA2008F4DCC /* default_inputBack@2x.png */,
+				04D9C24018FD7502007974AD /* default_delete_icon_h@2x.png */,
+				04D9C24118FD7502007974AD /* default_delete_icon_n@2x.png */,
+				04D9C24218FD7502007974AD /* default_facial_h@2x.png */,
+				04D9C24318FD7502007974AD /* default_facial_n@2x.png */,
+				04D9C24418FD7502007974AD /* default_input_bkg@2x.png */,
+				04D9C24518FD7502007974AD /* default_keyboard_h@2x.png */,
+				04D9C24618FD7502007974AD /* default_keyboard_n@2x.png */,
 				044856D018F8FD8C00CC7830 /* NTFacialView.h */,
 				044856D118F8FD8C00CC7830 /* NTFacialView.m */,
 				0457998E18F9085100C62A98 /* NTInputToolBar.h */,
@@ -331,14 +338,6 @@
 				042762C318FBE74A005306FE /* NTGrowingTextView.h */,
 				042762C418FBE74A005306FE /* NTGrowingTextView.m */,
 				044A749D18FAF87D00113A2C /* NTInputControllerProtocol.h */,
-				0457999018F9085100C62A98 /* UIExpandingTextView.h */,
-				0457999118F9085100C62A98 /* UIExpandingTextView.m */,
-				0457999218F9085100C62A98 /* UIExpandingTextViewInternal.h */,
-				0457999318F9085100C62A98 /* UIExpandingTextViewInternal.m */,
-				048B4CF318FBB8A5008F4DCC /* HPGrowingTextView.h */,
-				048B4CF418FBB8A5008F4DCC /* HPGrowingTextView.m */,
-				048B4CF518FBB8A5008F4DCC /* HPTextViewInternal.h */,
-				048B4CF618FBB8A5008F4DCC /* HPTextViewInternal.m */,
 				044856C018F8FD7800CC7830 /* emoji */,
 			);
 			path = Classes;
@@ -477,14 +476,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044856DC18F900C100CC7830 /* default_delete_icon@2x.png in Resources */,
-				048B4CFA18FBDCA2008F4DCC /* default_inputBack@2x.png in Resources */,
-				045799A318F95EAB00C62A98 /* default_keyboard@2x.png in Resources */,
+				04D9C24718FD7502007974AD /* default_delete_icon_h@2x.png in Resources */,
+				04D9C24818FD7502007974AD /* default_delete_icon_n@2x.png in Resources */,
+				04D9C24D18FD7502007974AD /* default_keyboard_n@2x.png in Resources */,
+				04D9C24A18FD7502007974AD /* default_facial_n@2x.png in Resources */,
 				0448566F18F8FCEF00CC7830 /* Images.xcassets in Resources */,
 				04A2E78D18F9AFC400B17843 /* README.md in Resources */,
+				04D9C24918FD7502007974AD /* default_facial_h@2x.png in Resources */,
 				0448566118F8FCEF00CC7830 /* InfoPlist.strings in Resources */,
-				0457999F18F95EAB00C62A98 /* default_facial@2x.png in Resources */,
+				04D9C24C18FD7502007974AD /* default_keyboard_h@2x.png in Resources */,
 				0448566A18F8FCEF00CC7830 /* Main.storyboard in Resources */,
+				04D9C24B18FD7502007974AD /* default_input_bkg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,11 +502,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044856DD18F9012D00CC7830 /* default_delete_icon@2x.png in Resources */,
-				045799A418F95EAB00C62A98 /* default_keyboard@2x.png in Resources */,
 				044856A618F8FD1E00CC7830 /* Images.xcassets in Resources */,
 				0448569818F8FD1E00CC7830 /* InfoPlist.strings in Resources */,
-				045799A018F95EAB00C62A98 /* default_facial@2x.png in Resources */,
 				044856A118F8FD1E00CC7830 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,15 +530,14 @@
 				044856D318F8FD8C00CC7830 /* NTFacialView.m in Sources */,
 				044856CB18F8FD7800CC7830 /* Emoji.m in Sources */,
 				044856CD18F8FD7800CC7830 /* EmojiMapSymbols.m in Sources */,
+				04D9C26B18FD9AF2007974AD /* FSCommentListViewController.m in Sources */,
+				04D9C25018FD7B4D007974AD /* NTTableViewController.m in Sources */,
 				044856CF18F8FD7800CC7830 /* EmojiTransport.m in Sources */,
 				0448566318F8FCEF00CC7830 /* main.m in Sources */,
-				048B4CF818FBB8A5008F4DCC /* HPTextViewInternal.m in Sources */,
-				048B4CF718FBB8A5008F4DCC /* HPGrowingTextView.m in Sources */,
-				0457999A18F9085100C62A98 /* UIExpandingTextViewInternal.m in Sources */,
-				0457999818F9085100C62A98 /* UIExpandingTextView.m in Sources */,
 				042762C518FBE74A005306FE /* NTGrowingTextView.m in Sources */,
 				044856CE18F8FD7800CC7830 /* EmojiPictographs.m in Sources */,
 				044856CC18F8FD7800CC7830 /* EmojiEmoticons.m in Sources */,
+				04AC772B19051EC000EE0766 /* ViewControllerB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,8 +561,6 @@
 				044856DA18F8FEA600CC7830 /* EmojiTransport.m in Sources */,
 				044856D518F8FE6F00CC7830 /* NTFacialView.m in Sources */,
 				044856A418F8FD1E00CC7830 /* ViewController.m in Sources */,
-				0457999B18F9085100C62A98 /* UIExpandingTextViewInternal.m in Sources */,
-				0457999918F9085100C62A98 /* UIExpandingTextView.m in Sources */,
 				0448569E18F8FD1E00CC7830 /* AppDelegate.m in Sources */,
 				0448569A18F8FD1E00CC7830 /* main.m in Sources */,
 			);

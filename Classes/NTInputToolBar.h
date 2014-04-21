@@ -17,6 +17,7 @@
     UIViewController    *viewController;
     UIView              *contentView;
     UIView              *inputBarView;
+    //BOOL                attachToScrollView;
     
     UIImageView         *toolbarBackground;
     NTFacialView        *facialView;
@@ -42,10 +43,13 @@
 @property(nonatomic,strong) UIImage *voiceImage;
 @property(nonatomic,assign) BOOL voiceButtonHidden;// default is YES(Hidden)
 @property(nonatomic,assign) BOOL facialButtonHidden;
+@property(nonatomic,assign) BOOL hiddenAfterUserd; //defautl is NO 
 
 - (id)initWithViewController:(id<NTInputControllerDelegate>)controller;
+//- (id)initWithScrollViewController:(UIViewController *)controller;
 - (void)hiddenKeyboard;
 - (void)showKeyboard;
+- (void)becomeFirstResponder;
 
 @end
 

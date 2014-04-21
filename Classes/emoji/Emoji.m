@@ -26,4 +26,11 @@
     
     return array;
 }
+
+
++ (NSArray *)emojiEmotions{
+
+    return [EmojiEmoticons allEmoticons];
+}
+
 @end
