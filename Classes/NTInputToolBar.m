@@ -42,9 +42,6 @@ const CGFloat defaultKeyboardHeight = 216.f;
         text = [NSMutableString string];
         
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
         
     }
@@ -87,6 +84,8 @@ const CGFloat defaultKeyboardHeight = 216.f;
         
         [viewController.view addSubview:self];
         [self initializeView];
+        
+        [self registerKeyboardNotification];
     }
     return self;
 }
@@ -158,17 +157,27 @@ const CGFloat defaultKeyboardHeight = 216.f;
     }
 }
 
-- (void)setHiddenAfterUserd:(BOOL)hiddenAfterUserd{
 
-    _hiddenAfterUserd = hiddenAfterUserd;
-    self.hidden = hiddenAfterUserd;
+
+- (void)registerKeyboardNotification{
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+   
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
+- (void)removeKeyboardNotification{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+- (void)setHiddenAfterUserd:(BOOL)hiddenAfterUserd{
+    
+    _hiddenAfterUserd = hiddenAfterUserd;
+    self.hidden = hiddenAfterUserd;
     
 }
 
@@ -177,6 +186,17 @@ const CGFloat defaultKeyboardHeight = 216.f;
     [_textView becomeFirstResponder];
     
 }
+
+- (void)enableKeyboardNotification:(BOOL)enable{
+    if (enable) {
+     
+        [self registerKeyboardNotification];
+    }else{
+        [self removeKeyboardNotification];
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////
 
 - (void)voiceButtonClicked:(UIButton *)button{
 

@@ -50,6 +50,8 @@
 - (void)showKeyboard;
 - (void)becomeFirstResponder;
 
+- (void)enableKeyboardNotification:(BOOL)enable;
+
 @end
 
 
